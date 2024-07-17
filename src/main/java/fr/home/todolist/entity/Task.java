@@ -1,6 +1,7 @@
 package fr.home.todolist.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
 
 @Entity
 public class Task {
@@ -9,6 +10,8 @@ public class Task {
     private long idTask;
 
     @Column(name="task_name")
+//   @NotEmpty : contrainte
+    @NotEmpty(message="nom de tache requis")
     private String taskName;
 
     public long getIdTask() {
