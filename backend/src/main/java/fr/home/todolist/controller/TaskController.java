@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/task")
+@RequestMapping("/api")
 public class TaskController {
     @Autowired
     private TaskService taskService;
@@ -29,7 +29,7 @@ public class TaskController {
 //       model.addAttribute("name", task.getTaskName());
 //       return "good";
 //    }
-    @PostMapping("/tasks")
+    @PostMapping("/new")
 //    @Valid : permet d'activer la validation des contraintes dans l'entité Task
 //    BindingResult : permet de capturer les errors
 //    dans ResponseEntity, le "?" signifie que la réponse peut contenir un corps de n'importe quel type (String, int,
