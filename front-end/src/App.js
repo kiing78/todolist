@@ -2,11 +2,15 @@ import logo from './logo.svg';
 import './App.css';
 import Button from './component/Button';
 import CreateItemForm from './component/CreateItemForm';
+import ListItem from './component/ListItem';
 
 
 function App() {
   return (
-    <CreateItemForm />
+    <div>
+    <CreateItemForm /> 
+    <ListItem />
+    </div>
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
