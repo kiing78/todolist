@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -25,8 +26,10 @@ public class TaskController {
     public ResponseEntity<?> listTasks(){
         if(taskService.getTasks().size()==0){
             return ResponseEntity.status(HttpStatus.OK).body("Aucune tache");
+
         }
         return ResponseEntity.status(HttpStatus.OK).body(taskService.getTasks());
+
     }
 
 
