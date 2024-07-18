@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,6 +20,16 @@ import java.util.Map;
 public class TaskController {
     @Autowired
     private TaskService taskService;
+
+    @GetMapping("/tasks")
+    public ResponseEntity<?> listTasks(){
+        if(taskService.getTasks().size()==0){
+            return ResponseEntity.status(HttpStatus.OK).body("Aucune tache");
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(taskService.getTasks());
+    }
+
+
 
 //    @PostMapping("/addTask")
 //    public String createTask(@ModelAttribute("taskName")Task task, BindingResult result, ModelMap model){
