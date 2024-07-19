@@ -21,28 +21,16 @@ import java.util.Map;
 public class TaskController {
     @Autowired
     private TaskService taskService;
-
+//    give a task's list
     @GetMapping("/tasks")
     public ResponseEntity<?> listTasks(){
         if(taskService.getTasks().size()==0){
             return ResponseEntity.status(HttpStatus.OK).body("Aucune tache");
-
         }
         return ResponseEntity.status(HttpStatus.OK).body(taskService.getTasks());
-
     }
 
-
-
-//    @PostMapping("/addTask")
-//    public String createTask(@ModelAttribute("taskName")Task task, BindingResult result, ModelMap model){
-//        if(result.hasErrors()){
-//            return "error";
-//        }
-//        //on lie le nom du champ du formulaire à l'attribut de la classe Task
-//       model.addAttribute("name", task.getTaskName());
-//       return "good";
-//    }
+//    Add a task to database
     @PostMapping("/new")
 //    @Valid : permet d'activer la validation des contraintes dans l'entité Task
 //    BindingResult : permet de capturer les errors
@@ -59,10 +47,7 @@ public class TaskController {
             }
             return  ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
         }
-        //System.out.println("test controller "+task.getTaskName());
         taskService.addTask(task);
         return  ResponseEntity.status(HttpStatus.CREATED).body(task);
-
     }
-
 }

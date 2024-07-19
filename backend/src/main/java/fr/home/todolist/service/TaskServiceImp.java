@@ -12,21 +12,20 @@ import java.util.List;
 public class TaskServiceImp implements TaskService<Task>{
     @Autowired
     private TaskRepository taskRepository;
+
+//    Add a task to database
     @Override
     public void addTask(Task task) {
-       // System.out.println("test service "+task.getTaskName());
        taskRepository.save(task);
-
     }
 
+//    return a task's list
     @Override
     public List<Task> getTasks() {
-//      on met les éléments dans une list
         List<Task> listTask = new ArrayList<Task>();
         for(Task tas : taskRepository.findAll()){
             listTask.add(tas);
         }
-
         return listTask;
     }
 
