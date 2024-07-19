@@ -1,5 +1,6 @@
 import React from "react";
 
+//  Component submit button
 export default function Button(){
     const handleReload = () => {
         window.location.reload();

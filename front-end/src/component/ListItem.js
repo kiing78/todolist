@@ -1,15 +1,17 @@
 import React, {useEffect,useState} from "react";
 import { getItem } from "../services/api";
 
+// Call Get request from API
 export default function ListItem(){
     const[tasks,setTasks] = useState([]);
+    //  load the element's list
     const [loading, setLoading]=useState(true);
     const [error, setError]=useState(null);
 
+    // Effectue une requete initiale au chargement du composant
     useEffect(()=>{
         getItem()
         .then((response)=>{
-            console.log("la donnée ", response.data);
             setTasks(response.data);
             setLoading(false);
         })
