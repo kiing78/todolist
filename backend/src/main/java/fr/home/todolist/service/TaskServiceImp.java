@@ -19,7 +19,7 @@ public class TaskServiceImp implements TaskService<Task>{
        taskRepository.save(task);
     }
 
-//    return a task's list
+//    Return a task's list
     @Override
     public List<Task> getTasks() {
         List<Task> listTask = new ArrayList<Task>();
@@ -27,6 +27,12 @@ public class TaskServiceImp implements TaskService<Task>{
             listTask.add(tas);
         }
         return listTask;
+    }
+
+//    Delete a task in database
+    @Override
+    public void deleteTask(long idTask) {
+        taskRepository.deleteById(idTask);
     }
 
 
