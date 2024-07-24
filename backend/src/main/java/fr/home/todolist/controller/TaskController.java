@@ -21,8 +21,8 @@ import java.util.Map;
 public class TaskController {
     @Autowired
     private TaskService taskService;
-//    give a task's list
-    @GetMapping("/tasks")
+//   Get: give a task's list
+    @GetMapping(path="/tasks")
     public ResponseEntity<?> listTasks(){
         if(taskService.getTasks().size()==0){
             return ResponseEntity.status(HttpStatus.OK).body("Aucune tache");
@@ -30,8 +30,8 @@ public class TaskController {
         return ResponseEntity.status(HttpStatus.OK).body(taskService.getTasks());
     }
 
-//    Add a task to database
-    @PostMapping("/new")
+//  Post:   Add a task to database
+    @PostMapping(path="/new")
 //    @Valid : permet d'activer la validation des contraintes dans l'entité Task
 //    BindingResult : permet de capturer les errors
 //    dans ResponseEntity, le "?" signifie que la réponse peut contenir un corps de n'importe quel type (String, int,
@@ -49,5 +49,14 @@ public class TaskController {
         }
         taskService.addTask(task);
         return  ResponseEntity.status(HttpStatus.CREATED).body(task);
+    }
+
+//    Delete a task in database
+//    @PathVariable : permet de récupérer l'argument dans l'URI, il faut que le nom du parametre de la methode soit
+//    écrit de la même façon que l'argument en URI (ici c'est id)
+    @DeleteMapping(path="/{id}")
+    public ResponseEntity<String> deleteTask(@PathVariable long id){
+        taskService.deleteTask(id);
+        return ResponseEntity.status(HttpStatus.OK).body("la tache a été supprimé");
     }
 }

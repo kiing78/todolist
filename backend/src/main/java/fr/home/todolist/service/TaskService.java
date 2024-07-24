@@ -7,4 +7,6 @@ import java.util.List;
 public interface TaskService<T> {
     public void addTask(T name);
     public List<T> getTasks();
+
+   public void deleteTask(long task);
 }
