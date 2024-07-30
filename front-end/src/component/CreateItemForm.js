@@ -8,6 +8,7 @@ import Button from "./Button";
 export default function CreateItemForm(){
     const [taskName,setTaskName]=useState('');
 
+    // handleSubmit : recevera une donnée formulaire si le formulaire est envoyé
     const handleSubmit = (event) =>{
         //permet d'éviter de recharger la page lorsque le formulaire est soumis
         event.preventDefault();

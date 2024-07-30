@@ -11,3 +11,8 @@ export const createItem=(item) =>{
 export const getItem=()=>{
     return axios.get("http://localhost:8080/api/tasks");
 };
+
+//  Delete request from API
+export const deleteItem = (idTask) => {
+    return axios.delete(`http://localhost:8080/api/${idTask}`);
+};
