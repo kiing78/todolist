@@ -26,8 +26,8 @@ export default function CreateItemForm(){
     };
     return (
         <form onSubmit={handleSubmit}>
-            <div>
-               <input type="text" value={taskName} onChange={(e) => setTaskName(e.target.value)} placeholder="entrer une tache" />
+            <div class="form">
+               <input type="text" class="field" value={taskName} onChange={(e) => setTaskName(e.target.value)} placeholder="entrer une tache" />
                <Button />
             </div>
             

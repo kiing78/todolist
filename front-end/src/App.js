@@ -5,12 +5,14 @@ import Delete from './component/Delete';
 
 function App() {
   return (
-    <div>
-      
-    <CreateItemForm /> 
-    <Delete />
+ 
+      <div class="bg-app">
+        
+      <CreateItemForm /> 
+      <Delete />
 
-    </div>
+      </div>
+  
 
   );
 }

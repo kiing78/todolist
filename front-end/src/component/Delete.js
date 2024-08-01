@@ -41,7 +41,7 @@ export default function Delete() {
     };
 
     return (
-        <div>
+        <div class="taskListForm">
             <List taskList={taskList} onDelete={handleDelete} />
             {message && <p style={{ color: 'green' }}>{message}</p>}
             {error && <p style={{ color: 'red' }}>{error}</p>}

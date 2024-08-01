@@ -1,5 +1,6 @@
 import React from "react";
 
+
 //  Component submit button
 export default function Button(){
     const handleReload = () => {
@@ -7,8 +8,8 @@ export default function Button(){
       };
 
     return (
-        <div>
-            <button type="submit"  onClick={handleReload}>Ajouter</button>
+        <div class="form">
+            <button type="submit" class="button" onClick={handleReload}>Ajouter</button>
         </div>
     );
 };
