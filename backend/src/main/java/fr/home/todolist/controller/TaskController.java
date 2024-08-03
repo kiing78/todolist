@@ -24,15 +24,16 @@ public class TaskController {
 //   Get: give a task's list
     @GetMapping(path="/tasks")
     public ResponseEntity<?> listTasks(){
-        if(taskService.getTasks().size()==0){
-            return ResponseEntity.status(HttpStatus.OK).body("Aucune tache");
-        }
+//        if(taskService.getTasks().size()==0){
+//            return ResponseEntity.status(HttpStatus.OK).body("Aucune tache");
+//        }
         return ResponseEntity.status(HttpStatus.OK).body(taskService.getTasks());
     }
 
 //  Post:   Add a task to database
     @PostMapping(path="/new")
 //    @Valid : permet d'activer la validation des contraintes dans l'entité Task
+//    @RequestBody : permet de récupérer ce qu'il y a dans le body(de postman par exemple)
 //    BindingResult : permet de capturer les errors
 //    dans ResponseEntity, le "?" signifie que la réponse peut contenir un corps de n'importe quel type (String, int,
 //    etc...)
@@ -55,7 +56,7 @@ public class TaskController {
 //    @PathVariable : permet de récupérer l'argument dans l'URI, il faut que le nom du parametre de la methode soit
 //    écrit de la même façon que l'argument en URI (ici c'est id)
     @DeleteMapping(path="/{id}")
-    public ResponseEntity<String> deleteTask(@PathVariable long id){
+    public ResponseEntity<?> deleteTask(@PathVariable long id){
         taskService.deleteTask(id);
         return ResponseEntity.status(HttpStatus.OK).body("la tache a été supprimé");
     }
