@@ -10,7 +10,7 @@ const List = ({ taskList, onDelete }) => {
                 <ul>
                     {/* Afficher la liste des taches */}
                         {taskList.map((task) => (
-                    <div key={task.idTask} >
+                    <div key={task.idTask} class="taskLine" >
                         <li><p>{task.taskName}</p></li>
                         <button class="buttonDelete" onClick={() => onDelete(task.idTask)}><img src={trash} alt="Delete"></img></button>
                     </div>

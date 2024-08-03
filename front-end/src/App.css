@@ -94,7 +94,8 @@
     max-height: 300px;
     
   }
-  .taskList{
-
+  .taskLine{
+    display: flex;
+    justify-content: space-between;
   }
 }
