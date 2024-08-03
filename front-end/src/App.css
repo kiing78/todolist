@@ -45,3 +45,57 @@
   height : 100%;
   background-color: aquamarine;
 }
+
+@media screen{
+  .bg-app{
+    border-radius: 10px;
+    display: inline-table;
+    align-items: center;
+    justify-content: center;
+    background-color: #B3B6B7;
+    flex-direction: column;
+    width: 400px;
+    height: 100px;
+    
+  }
+  
+  .form{
+    display:flex;
+  }
+  
+  .field{
+    display:flex;
+    border-radius:10px;
+  }
+  
+  .button{
+    border-radius: 10px;
+    background-color: #5BBEF5;
+  }
+  
+  .buttonDelete{
+    border-radius: 8px;
+    background-color: #D84343;
+  }
+  
+  #root{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+  }
+  
+  img{
+    width:100%;
+  }
+  
+  .taskListForm{
+    overflow-y: auto;
+    max-height: 300px;
+    
+  }
+  .taskLine{
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -1,17 +1,18 @@
 import React from "react";
+import trash from "../img/trash.svg";
 
 // Composant pour 
 const List = ({ taskList, onDelete }) => {
     return (
-        <div>
+        <div class="taskList">
             {taskList.length > 0 ? (
 
                 <ul>
                     {/* Afficher la liste des taches */}
                         {taskList.map((task) => (
-                    <div key={task.idTask}>
+                    <div key={task.idTask} class="taskLine" >
                         <li><p>{task.taskName}</p></li>
-                        <button onClick={() => onDelete(task.idTask)}>Delete</button>
+                        <button class="buttonDelete" onClick={() => onDelete(task.idTask)}><img src={trash} alt="Delete"></img></button>
                     </div>
                     ))}
 
